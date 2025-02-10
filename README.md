@@ -9,7 +9,7 @@ A simple React Native counter app built with Expo.
 
 ## Installation
 ```sh
-git clone https://github.com/your-username/counter-app.git
+git clone https://github.com/chyashp/Counter-App-React-Native.git
 cd counter-app
 npm install
 expo start
