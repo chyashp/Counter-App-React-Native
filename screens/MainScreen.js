@@ -1,19 +1,25 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import CustomButton from "../UI/CustomButton";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { Platform } from "react-native";
 
 const MainScreen = ({
   counter,
+  goalNumber,
   onIncrement,
   onDecrement,
   onReset,
   onSetGoal,
+  sets,
 }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.counter}>{counter}</Text>
+      <Text style={styles.setsCounter}>{sets}</Text>
+      <View style={styles.counterContainer}>
+        <Text style={styles.counter}>{counter}</Text>
+        {goalNumber !== null && (
+          <Text style={styles.goalNumber}>/{goalNumber}</Text>
+        )}
+      </View>
       <CustomButton
         label="-"
         onPress={onDecrement}
@@ -33,6 +39,12 @@ const MainScreen = ({
           style={[styles.button, styles.resetButton]}
           textStyle={styles.resetText}
         />
+        <CustomButton
+          label="Set Goal"
+          onPress={onSetGoal}
+          style={[styles.button, styles.resetButton]}
+          textStyle={styles.resetText}
+        />
       </View>
     </View>
   );
@@ -46,52 +58,58 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#000000",
   },
+  counterContainer: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    marginBottom: 20,
+  },
   counter: {
-    fontSize: 90,
+    fontSize: 100,
     fontWeight: "bold",
     color: "#f8f8ff",
-    marginBottom: 20,
+  },
+  goalNumber: {
+    fontSize: 20,
+    color: "#ffebcd",
+    marginLeft: 5,
   },
   button: {
     width: "85%",
     paddingVertical: 30,
     margin: 10,
-    borderRadius: Platform.OS === "ios" ? 60 : 80,
+    borderRadius: 60,
   },
   incrementButton: {
     backgroundColor: "#87ceeb",
-    flex: 2,
+    flex: 1.5,
   },
   decrementButton: {
-    width: Platform.OS === "ios" ? 230 : 300,
-    height: Platform.OS === "ios" ? 80 : 100,
+    width: 230,
+    height: 200,
     backgroundColor: "#ffb6c1",
-    flex: 1,
+    // flex: 1,
   },
   resetButtonContainer: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
     padding: 20,
     marginTop: 10,
     alignSelf: "center",
-    width: "60%",
+    width: "90%",
     bottom: 20,
   },
   resetButton: {
     backgroundColor: "#9370db",
-    width: "80%",
+    width: "45%",
     paddingVertical: 20,
-    // borderRadius: 50,
-  },
-  setGoalButton: {
-    backgroundColor: "#da70d6",
-    width: "80%",
-    paddingVertical: 20,
+    borderRadius: 50,
+    color: "#fff",
+    paddingVertical: 10,
   },
   resetText: {
-    fontSize: 25,
     color: "#fff",
+    fontSize: 25,
   },
   incrementText: {
     fontSize: 100,
@@ -100,6 +118,14 @@ const styles = StyleSheet.create({
   decrementText: {
     fontSize: 100,
     color: "#FFF",
+  },
+  setsCounter: {
+    position: 'absolute',
+    top: 80,
+    right: 30,
+    fontSize: 24,
+    fontWeight: '500',
+    color: '#ffdead',
   },
 });
 

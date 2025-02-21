@@ -4,25 +4,36 @@
     "slug": "counter-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "icon": "./assets/icon-1024-1024.png",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/icon-1024-1024.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "ios": {
-      "supportsTablet": true
+      "icon": "./assets/icon-1024-1024.png",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yashkk23.counterapp"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "foregroundImage": "./assets/icon-1024-1024.png"
+      },
+      "package": "com.yashkk23.counterapp"
+    },
+    "statusBar": {
+      "backgroundColor": "#000000",
+      "barStyle": "auto"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "dad1c711-6219-4388-8a5f-16e388110eff"
+      }
     }
   }
 }
