@@ -2,7 +2,7 @@
   "expo": {
     "name": "counter-app",
     "slug": "counter-app",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
@@ -19,7 +19,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icon-1024-1024.png"
+        "foregroundImage": "./assets/icon-1024-1024.png",
+        "versionCode": 2
       },
       "package": "com.yashkk23.counterapp"
     },
