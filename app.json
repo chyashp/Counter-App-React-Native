@@ -22,7 +22,8 @@
         "foregroundImage": "./assets/icon-1024-1024.png",
         "versionCode": 2
       },
-      "package": "com.yashkk23.counterapp"
+      "package": "com.yashkk23.counterapp",
+      "permissions": []
     },
     "statusBar": {
       "backgroundColor": "#000000",
